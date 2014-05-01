@@ -24,7 +24,7 @@ int main() {
   
   FILE *fp = fopen("./input.txt", "r");
   for(int i = 1; ; ++i) {
-    fscanf(fp, " %s ", dic[i]);
+    fgets(dic[i], 20, fp);
     num = i;
     if(feof(fp)) break;
   }
@@ -53,5 +53,5 @@ int main() {
     }
   }
 
-  printf("%d", max);
+  printf("%d\n", max);
 }
