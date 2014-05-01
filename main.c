@@ -2,8 +2,12 @@
 #include <string.h>
 
 
-// dic : 단어 저장
-char dic[26000][20];
+// wordNum : input.txt의 단어들 최대 갯수
+// wordLen : input.txt의 단어 각각의 최대 길이
+// dic     : 단어들을 저장함
+#define wordNum 26000
+#define wordLen 20
+char dic[wordNum][wordLen];
 
 int trans(int a, int b) {
   const int eod = strlen(dic[a]);
@@ -23,8 +27,8 @@ int main() {
   int num;
   
   FILE *fp = fopen("./input.txt", "r");
-  for(int i = 1; ; ++i) {
-    fgets(dic[i], 20, fp);
+  for(int i = 1; i < wordNum; ++i) {
+    fgets(dic[i], wordLen, fp);
     num = i;
     if(feof(fp)) break;
   }
